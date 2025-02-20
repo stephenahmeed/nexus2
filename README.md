@@ -5,6 +5,8 @@
 ### Step 1: Create and Navigate to Directory
 ```sh
 mkdir nexus-cli
+```
+```sh
 cd nexus-cli
 ```
 
