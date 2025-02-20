@@ -36,7 +36,7 @@ curl https://cli.nexus.xyz/ | sh
 ```
 
 ### Step 5: Get Node ID
-Retrieve your Node ID from the Node section: [Nexus Beta](https://app.nexus.xyz/nodes)
+Take your Node ID from the Node section: [Nexus Beta](https://app.nexus.xyz/nodes)
 
 ---
 
