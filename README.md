@@ -65,7 +65,12 @@ sudo unzip protoc-30.0-rc-1-linux-x86_64.zip -d /usr/local/
 ```sh
 sudo chmod +x /usr/local/bin/protoc
 ```
+### Error 2: If this error coming Killed or memory allocation of 8606711792 bytes failed Aborted (core dumped).
 
+Then use this command
+
+```sh
+sudo fallocate -l 10G /swapfile && sudo chmod 600 /swapfile && sudo mkswap /swapfile && sudo swapon /swapfile && echo ‘/swapfile none swap sw 0 0’ | sudo tee -a /etc/fstab
 ---
 
 ## Multi-Device Usage
