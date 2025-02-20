@@ -11,14 +11,22 @@ cd nexus-cli
 ### Step 2: Install Rust
 ```sh
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+```
+```sh
 rustup target add riscv32i-unknown-none-elf
+```
+```sh
 source $HOME/.cargo/env
 ```
 
 ### Step 3: Install Dependencies
 ```sh
 sudo apt update
+```
+```sh
 sudo apt install pkg-config libssl-dev
+```
+```sh
 sudo apt install protobuf-compiler
 ```
 
@@ -28,7 +36,7 @@ curl https://cli.nexus.xyz/ | sh
 ```
 
 ### Step 5: Get Node ID
-Retrieve your Node ID from the Node section: [Nexus Beta](https://beta.nexus.xyz/)
+Retrieve your Node ID from the Node section: [Nexus Beta](https://app.nexus.xyz/nodes)
 
 ---
 
@@ -47,8 +55,14 @@ If you encounter this error, run the following commands one by one:
 
 ```sh
 sudo apt-get remove -y protobuf-compiler
+```
+```sh
 wget https://github.com/protocolbuffers/protobuf/releases/download/v30.0-rc1/protoc-30.0-rc-1-linux-x86_64.zip
+```
+```sh
 sudo unzip protoc-30.0-rc-1-linux-x86_64.zip -d /usr/local/
+```
+```sh
 sudo chmod +x /usr/local/bin/protoc
 ```
 
