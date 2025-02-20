@@ -76,6 +76,58 @@ sudo fallocate -l 10G /swapfile && sudo chmod 600 /swapfile && sudo mkswap /swap
 ```
 ---
 
+### Another Way
+
+## Update and Install Dependencies
+```sh
+sudo apt update && sudo apt upgrade -y
+sudo apt install build-essential curl git pkg-config libssl-dev protobuf-compiler unzip -y
+```
+
+## Install Protobuf Compiler
+```sh
+PROTOC_ZIP=protoc-21.12-linux-x86_64.zip
+curl -OL https://github.com/protocolbuffers/protobuf/releases/download/v21.12/$PROTOC_ZIP
+sudo unzip -o $PROTOC_ZIP -d /usr/local bin/protoc
+sudo unzip -o $PROTOC_ZIP -d /usr/local 'include/*'
+rm -f $PROTOC_ZIP
+```
+
+## Install Rust
+```sh
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+source $HOME/.cargo/env
+rustup update
+```
+
+## Set Up Environment Variables
+```sh
+echo 'export PATH="$HOME/.cargo/bin:$PATH"' >> ~/.bashrc
+source ~/.bashrc
+```
+
+## Clone Nexus Repository
+```sh
+rm -rf ~/.nexus
+git clone https://github.com/nexus-xyz/nexus-zkvm ~/.nexus
+cd ~/.nexus
+```
+
+## Install Nexus CLI
+```sh
+curl https://cli.nexus.xyz/ | sh
+```
+Then type `2` and enter your CLI code.
+
+## Fix Byte Error (If Needed)
+If you encounter a byte error, run the following command:
+```sh
+sudo fallocate -l 10G /swapfile && sudo chmod 600 /swapfile && sudo mkswap /swapfile && sudo swapon /swapfile && echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
+```
+
+
+
+
 ## Multi-Device Usage
 You can use Nexus CLI on multiple devices without issues.
 
